@@ -36,8 +36,7 @@
       <div>
         <p class="note">ул. Черкизова 14, Москва</p>
         <h1 class="hero__title">Покоряйте <span>волны</span> вместе с нами!</h1>
-        <p class="hero__lead">Сёрф-обучение для взрослых и детей. Индивидуальные и групповые занятия, сертифицированные
-          инструкторы, безопасная экипировка и бодрая морская кардио‑радость.</p>
+        <p class="hero__lead">SurfTrainCo предлагает вам доступное, комплексное и приятное обучение серфингу для всех уровней навыков и возрастов.</p>
         <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
           <a class="btn btn--fill" href="#programs">Выбрать программу</a>
           <a class="btn" href="#signup">Записаться</a>
@@ -84,24 +83,6 @@
     </div>
   </section>
 
-  <!-- ======= INTRO ======= -->
-<!-- <section class="section" id="about">
-  <div class="container about about--blue">
-    <div class="about__panel">
-      <h2 class="h2">Серфинг <span class="note">это стиль жизни</span></h2>
-      <div class="about__media">
-        <img class="about__img" src="images/Картинка серфера.png" alt="SurfTrainCo">
-      </div>
-      <p>это компания по обучению серфингу, расположенная в Москве, которая открылась в 2018 году.
-Ее миссия состоит в том, чтобы обеспечить доступное, всестороннее и приятное обучение серфингу для всех уровней навыков и возрастов.</p>
-      <div style="display:flex;gap:12px;margin-top:12px">
-        <a class="btn btn--fill" href="#signup">Записаться</a>
-        <a class="btn" href="#programs">Программы</a>
-      </div>
-    </div>
-  </div>
-</section> -->
-
 <!-- ======= ABOUT (сёрфер слева, текст справа) ======= -->
 <section class="section" id="about">
   <div class="container">
@@ -114,12 +95,11 @@
       </figure>
 
       <!-- ПРАВАЯ КОЛОНКА: тёмная панель с текстом -->
+       <div class="about_right">
       <aside class="about__panel">
         <div class="about__title">SurfTrainCo —</div>
         <p>это компания по обучению сёрфингу, расположенная в Москве, которая открылась в 2018 году.</p>
         <p>Её миссия состоит в том, чтобы обеспечить доступное, всестороннее и приятное обучение сёрфингу для всех уровней навыков и возрастов.</p>
-
-       
       </aside> 
       <div class="about__stats">
           <div class="about__avatars">
@@ -133,15 +113,16 @@
   </div>
 </section>
 
-
-
 <section>
   <div class="container">
-  <div class="text-block">
-      <p>Не бойтесь испытать себя и свои возможности - поддайтесь волнам и пусть
-         они помогут вам раскрыть свой истинный потенциал. Погрузитесь в мир серфинга и почувствуйте,
-          как ваша жизнь наполняется яркими эмоциями и волнующими приключениями. Погнали волну!
-      </p>
+    <div class="text-block">
+<p class="about__text">
+  Не бойтесь испытывать себя и свои возможности — поддайтесь волнам и пусть они помогут вам раскрыть свой истинный потенциал.
+  <span class="about__text-underline">
+    Погрузитесь в мир сёрфинга и почувствуйте, как ваша жизнь наполняется яркими эмоциями и волнующими приключениями.
+  </span>
+  Погнали волну!
+</p>
   </div>
   </div>
 </section>
@@ -237,28 +218,49 @@
     </div>
   </section>
 
+  <section>
+  <div class="container">
+  <div class="text-block">
+      <p>Помните, что каждый ваш выход на доску - это возможность выйти за пределы своих комфортных зон и стать лучше, 
+        сильнее и увереннее. Поверьте в себя, стремитесь к новым вершинам и не забывайте наслаждаться каждым мгновением на доске
+      </p>
+  </div>
+  </div>
+</section>
+
+
   <!-- ======= SIGNUP ======= -->
   <section id="signup" class="section">
     <div class="container">
       <h2 class="h2">Запись <span class="note">на занятие</span></h2>
-      <form class="form card" onsubmit="event.preventDefault();alert('Заявка отправлена! Мы свяжемся с вами.');">
-        <div style="padding:16px;display:grid;gap:18px">
-          <div style="display:grid;gap:18px;grid-template-columns:1fr 1fr">
-            <input class="input" required placeholder="Ваше имя" />
-            <input class="input" required type="tel" placeholder="Телефон" />
+      <div class="signup">
+      <form class="signup_form" onsubmit="event.preventDefault();alert('Заявка отправлена! Мы свяжемся с вами.');">
+        <div class="signup_row">
+          <input class="input" required placeholder="Ваше имя" />
+          <input class="input" required type="tel" placeholder="Телефон" />
+        </div>
+          <div class="signup_row">
+            <select class="select" required>
+              <option value="" selected disabled>Выберите программу</option>
+              <option>Easy Start</option>
+              <option>Flow Rider</option>
+            </select>
+            <select class="select" required>
+              <option value="" selected disabled>Выберите время</option>
+              <option>10:00</option>
+              <option>14:00</option>
+            </select>
           </div>
-          <select class="select" required>
-            <option value="" selected disabled>Выберите программу</option>
-            <option>Easy Start</option>
-            <option>Flow Rider</option>
-          </select>
-          <textarea placeholder="Комментарий"></textarea>
-          <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div class="signup_actions">
             <button class="btn btn--fill" type="submit">Отправить заявку</button>
             <span class="feature__note">Нажимая на кнопку, вы соглашаетесь с политикой обработки данных.</span>
           </div>
-        </div>
-      </form>
+        </form>
+        <!-- ПРАВАЯ ЧАСТЬ: картинка-превью -->
+      <figure class="signup__preview">
+        <img src="images/img.png" alt="Сёрфер" />
+      </figure>
+      </div>
     </div>
   </section>
 
@@ -268,7 +270,7 @@
       <h2 class="h2">Мы на карте <span class="note">где искать?</span></h2>
       <div class="map card">
         <!-- Замените на скрин Google Maps вашего адреса: img/map.jpg -->
-        <img class="map__img" src="images/map.png" alt="Карта" />
+        <img class="map__img" src="images/Мы на карте.png" alt="Карта" />
       </div>
     </div>
   </section>
