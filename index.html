@@ -34,7 +34,7 @@
   <section class="hero section">
     <div class="container hero__inner">
       <div>
-        <p class="note">ул. Черкизова 14, Москва</p>
+        <p class="hero-address">ул. Черкизова 14, Москва</p>
         <h1 class="hero__title">Покоряйте <span>волны</span> вместе с нами!</h1>
         <p class="hero__lead">SurfTrainCo предлагает вам доступное, комплексное и приятное обучение серфингу для всех уровней навыков и возрастов.</p>
         <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
@@ -219,13 +219,15 @@
   </section>
 
   <section>
-  <div class="container">
-  <div class="text-block">
-      <p>Помните, что каждый ваш выход на доску - это возможность выйти за пределы своих комфортных зон и стать лучше, 
-        сильнее и увереннее. Поверьте в себя, стремитесь к новым вершинам и не забывайте наслаждаться каждым мгновением на доске
-      </p>
-  </div>
-  </div>
+    <div class="text-block">
+  <p class="about__text">
+    Помните, что каждый ваш выход на доску — это возможность выйти за пределы своих комфортных зон и стать лучше,
+    сильнее и увереннее.
+    <span class="about__text-underline">
+      Поверьте в себя, стремитесь к новым вершинам и не забывайте наслаждаться каждым мгновением на доске.
+    </span>
+  </p>
+</div>
 </section>
 
 
@@ -234,28 +236,42 @@
     <div class="container">
       <h2 class="h2">Запись <span class="note">на занятие</span></h2>
       <div class="signup">
-      <form class="signup_form" onsubmit="event.preventDefault();alert('Заявка отправлена! Мы свяжемся с вами.');">
-        <div class="signup_row">
-          <input class="input" required placeholder="Ваше имя" />
-          <input class="input" required type="tel" placeholder="Телефон" />
-        </div>
-          <div class="signup_row">
-            <select class="select" required>
-              <option value="" selected disabled>Выберите программу</option>
-              <option>Easy Start</option>
-              <option>Flow Rider</option>
-            </select>
-            <select class="select" required>
-              <option value="" selected disabled>Выберите время</option>
-              <option>10:00</option>
-              <option>14:00</option>
-            </select>
-          </div>
-          <div class="signup_actions">
-            <button class="btn btn--fill" type="submit">Отправить заявку</button>
-            <span class="feature__note">Нажимая на кнопку, вы соглашаетесь с политикой обработки данных.</span>
-          </div>
-        </form>
+        <form class="signup__form" onsubmit="event.preventDefault();alert('Заявка отправлена! Мы свяжемся с вами.');">
+  <!-- верхний ряд: дата + время -->
+  <div class="signup__row">
+    <select class="select" required>
+      <option value="" selected disabled>Выберите дату</option>
+      <option>10.06</option>
+      <option>11.06</option>
+    </select>
+    <select class="select" required>
+      <option value="" selected disabled>Выберите время</option>
+      <option>10:00</option>
+      <option>14:00</option>
+    </select>
+  </div>
+
+  <!-- второй ряд: тариф на всю ширину -->
+  <div class="signup__row">
+    <select class="select signup__full" required>
+      <option value="" selected disabled>Выберите подходящий тариф</option>
+      <option>Easy Start</option>
+      <option>Flow Rider</option>
+    </select>
+  </div>
+
+  <!-- третий ряд: имя + телефон -->
+  <div class="signup__row">
+    <input class="input" required placeholder="Иванов Иван" />
+    <input class="input" required type="tel" placeholder="8(909) 000-00-00" />
+  </div>
+
+  <!-- кнопка + подпись справа от кнопки -->
+  <div class="signup__actions">
+    <button class="btn btn--fill" type="submit">Записаться онлайн</button>
+    <span class="signup__note">Нажимая на кнопку, вы соглашаетесь с политикой обработки данных.</span>
+  </div>
+</form>
         <!-- ПРАВАЯ ЧАСТЬ: картинка-превью -->
       <figure class="signup__preview">
         <img src="images/img.png" alt="Сёрфер" />
