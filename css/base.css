@@ -28,7 +28,7 @@
 .site-header .nav{ display:flex; align-items:center; gap:24px; }
 
 /* Пилюли-линки */
-.site-header .nav_link{
+.site-header .nav__link{
   display:inline-block;
   font-weight:700;
   font-size:14px;
@@ -39,12 +39,12 @@
   border:2px solid transparent;
   transition:.15s ease;
 }
-.site-header .nav_link:hover{
+.site-header .nav__link:hover{
   background:#fff;
   border-color:var(--ring);
   box-shadow:0 4px 12px rgba(11,39,64,.06);
 }
-.site-header .nav_link.is-active{
+.site-header .nav__link.is-active{
   background:var(--ink);
   color:#fff !important;
   border-color:var(--ink);
@@ -229,7 +229,7 @@
       /* ===== SIGNUP  ===== */
       .signup{
         display:grid;
-        grid-template-columns:1.15fr 0.85fr;    
+        grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);    
         gap:18px;
         background:#fff;
         border:1px solid #eaf1f7;
@@ -241,8 +241,8 @@
       }
 
       /* форма слева */
-      .signup__form{ display:grid; gap:12px;align-content:start; }
-      .signup__row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+      .signup__form{ display:grid; gap:12px;align-content:start; min-width: 0; }
+      .signup__row{ display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap:12px; }
       .signup__actions{ display:flex; gap:12px; align-items:center; flex-wrap:nowrap; }
       .signup__actions .feature__note{
   white-space:nowrap;
@@ -262,6 +262,9 @@
       .input, .select, .input--area{
         appearance:none; -webkit-appearance:none; -moz-appearance:none;
         width:100%;
+        min-width: 0;
+        max-width:100%;
+        box-sizing:border-box;
         height:46px;
         border:2px solid #D3E6F4;
         background:#fff;
@@ -316,6 +319,70 @@
         object-fit:cover;
         filter:grayscale(.1) contrast(1.05)
       }
+
+/* ===== Контакты ===== */
+.contact-card{
+  padding:18px 20px;
+  border-radius:20px;          
+  box-shadow:0 10px 28px rgba(11,39,64,.08);
+}
+
+.contacts__item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:10px 0;
+  border-bottom:1px solid #eef3f7;
+}
+.contacts__item:last-child{ border-bottom:none; }
+
+.contacts__label{
+  width:120px;
+  min-width:120px;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.contacts__value a{
+  color:var(--ink);
+  text-decoration:none;
+}
+.contacts__value a:hover{ color:var(--brand); }
+
+/* Соцсети в карточке контактов */
+.socials{
+  display:flex;
+  gap:12px;                 /* расстояние между иконками */
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.socials__link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;                  /* отступ между иконкой и подписью */
+  color:var(--ink);
+  text-decoration:none;
+  padding:6px 8px;
+  border-radius:10px;
+  transition:transform .12s ease, background-color .12s ease, color .12s ease;
+}
+
+.socials__link:hover{
+  background:#f2f7fb;      /* лёгкая подсветка при ховере */
+  transform:translateY(-1px);
+  color:var(--brand);
+}
+
+.socials__icon{
+  width:20px;               /* подгони размер под свои исходники */
+  height:20px;
+  display:block;
+}
+
+
+/* чтобы заголовок не прятался под шапкой при переходе по #contacts */
+#contacts{ scroll-margin-top:80px; }
 
       /* ======= Футер ======= */
       .footer{padding:32px 0 56px;color:#88A0B7;font-size:14px}
